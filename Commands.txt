@@ -1,0 +1,24 @@
+Heroku Deploy Commands
+
+1.git init
+2.git add .
+3.git commit -m "message here"
+4. i.  heroku create (for random name)
+    ii. heroku create application-name
+5.heroku git:remote -a application-name
+6.git push heroku master
+
+AddOns in Heroku
+
+1.heroku addons:create cleardb:ignite (i.e : ignite is plan of ClearDB)
+2.heroku config (to get DB details)
+
+Access remote server with local phpMyAdmin
+
+add below lines to your “config.inc.php” file in the bottom:
+
+$i++;
+$cfg['Servers'][$i]['host'] = 'HostName:port'; //provide hostname and port if other than default
+$cfg['Servers'][$i]['user'] = 'userName';   //user name for your remote server
+$cfg['Servers'][$i]['password'] = 'Password';  //password
+$cfg['Servers'][$i]['auth_type'] = 'config';       // keep it as config
